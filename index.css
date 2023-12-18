@@ -15,7 +15,7 @@ body {
 .description p {
     color: white;
     text-align: center;
-    line-height: 8px;
+
 }
 .imgshowcasecontainer {
     display: flex;
@@ -69,7 +69,7 @@ body {
     align-items: center;
     margin-top: 20px;
 }
-.btn-container button {
+.btn-container a {
     border: 2px solid white;
     border-radius: 5px;
     color: white;
@@ -79,9 +79,11 @@ body {
     padding-right: 30px;
     background-color: transparent;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
-.btn-container button:hover {
+.btn-container a:hover {
     box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
     transform: translateY(-1px);
     cursor: default;
+    cursor: pointer;
 }
