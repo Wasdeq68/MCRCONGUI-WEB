@@ -6,9 +6,99 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="index.css">
     <title>MCRCON GUI</title>
 </head>
+<style>
+    body {
+    margin: 0;
+    background-color: rgb(59, 63, 68);
+}
+.heading{
+    padding-bottom: 5px;
+}
+.heading h1 {
+    text-align: center;
+    color: white;
+}
+.description{
+    padding-top: 8px;
+}
+.description p {
+    color: white;
+    text-align: center;
+
+}
+.imgshowcasecontainer {
+    display: flex;
+    justify-content: center;
+}
+.imgshowcase {
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+}
+.imgshowcase img{
+
+}
+.features-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    color: white;
+}
+.features-container div {
+    height: auto;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    
+
+}
+.features-container h2{
+    padding: 10px; text-align: center;
+}
+
+.features-container p {
+    padding: 10px; text-align: center;
+}
+.features-container div:hover {
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    cursor: default;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.btn-container a {
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+    padding-top: 15;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: transparent;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+.btn-container a:hover {
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-1px);
+    cursor: default;
+    cursor: pointer;
+}
+</style>
 <body>
     <div class="heading">
         <h1>MCRCON - GUI Edition</h1>
@@ -57,6 +147,9 @@
     <div class="btn-container">
         <a href="https://github.com/Wasdeq68/MCRCON-GUI">Download</a>
     </div>
+    <div class="btn-container">
+        <button id="clickButton" class="btn btn-primary">Click Me</button>
+    </div>
     <div class="features-container">
         <div>
             <h2>FEATURE 1</h2>
@@ -77,5 +170,25 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
+    <script>
+        document.getElementById('clickButton').addEventListener('click', function() {
+            // Make an AJAX request to your Express.js server
+            fetch('/click', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update UI with the response data (e.g., display the count)
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
 </body>
 </html>
