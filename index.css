@@ -25,6 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 800px;
+    border-radius: 20px;
 }
 .imgshowcase img{
 
@@ -40,7 +41,7 @@ body {
 }
 .features-container div {
     height: auto;
-    width: 200px;
+    width: 250px;
     border: 2px solid white;
     border-radius: 10px;
     margin-left: 10px;
@@ -65,9 +66,11 @@ body {
 }
 .btn-container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin-top: 20px;
+    flex-wrap: wrap;
+    color: white;
 }
 .btn-container a {
     border: 2px solid white;
@@ -80,6 +83,7 @@ body {
     background-color: transparent;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     text-decoration: none;
+    margin: 10px;
 }
 .btn-container a:hover {
     box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
